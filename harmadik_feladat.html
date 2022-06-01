@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Etel.js"></script>
+</head>
+<body>
+    <label for="nev">Étel neve:</label><br>
+    <input type="string" id="nev"><br>
+    <label for="ar">Ára:</label><br>
+    <input type="number" id="ar"><br>
+    <label for="kategoria">Kategória:</label><br>
+    <input type="string" id="kategoria"><br>
+    <label for="osszetevok">Összetevők:</label><br>
+    <input type="string" id="osszetevok"><br>
+    <button onclick="felvetel()">Felvétel</button>
+    <script>
+        var etel
+        var etelek = [];
+        function felvetel(){
+            let nev = document.getElementById('nev').value;
+            let ar = parseFloat(document.getElementById('ar').value);
+            let kategoria = document.getElementById('kategoria').value;
+            let osszetevok = document.getElementById('osszetevok').value;
+            etel = new Etel(nev, ar, kategoria, osszetevok);
+            etelek.push(etel);
+            console.log(etelek);
+        }
+    </script>
+    
+</body>
+</html>
